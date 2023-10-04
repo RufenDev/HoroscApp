@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.HoroscApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:statusBarColor">@color/primaryDark</item>
         <item name="android:windowLightStatusBar">false</item>
 
         <item name="android:navigationBarColor">@color/primaryDark</item>

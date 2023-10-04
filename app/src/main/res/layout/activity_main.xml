@@ -7,6 +7,16 @@
     android:background="@color/primary"
     tools:context=".ui.home.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/accent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
@@ -17,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@id/bnvMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:navGraph="@navigation/main_nav" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -25,10 +35,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/primaryDark"
+        app:itemActiveIndicatorStyle="@null"
         app:itemIconTint="@color/bottom_menu_state"
         app:itemTextColor="@color/bottom_menu_state"
         app:labelVisibilityMode="selected"
-        app:itemActiveIndicatorStyle="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
