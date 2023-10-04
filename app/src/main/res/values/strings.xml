@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HoroscApp</string>
+
+    <string name="home_title">Inicio</string>
+    <string name="palmistry_title">Quiromancia</string>
+    <string name="luck_title">Suerte</string>
+
+</resources>
