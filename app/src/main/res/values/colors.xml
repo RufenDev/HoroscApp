@@ -2,15 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ripple_color">#99A0A0A0</color>
 
     <color name="primary">#101010</color>
     <color name="primaryDark">#0A0A0A</color>
     <color name="secondary">#F4FBFB</color>
     <color name="accent">#d6a4fe</color>
 
+    <color name="black_alpha">#98000000</color>
+    <color name="horoscope_base_color">#323232</color>
     <color name="gold">#ffe78f</color>
     <color name="red">#FF5100</color>
-    <color name="black_alpha">#98000000</color>
-
-
 </resources>
