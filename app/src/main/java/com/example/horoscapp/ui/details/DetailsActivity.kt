@@ -1,7 +1,8 @@
 package com.example.horoscapp.ui.details
 
 import android.os.Bundle
-import android.view.View
+import android.view.Gravity.*
+import android.view.View.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -9,8 +10,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.navArgs
 import com.example.horoscapp.R
+import com.example.horoscapp.R.drawable.*
+import com.example.horoscapp.R.string.*
 import com.example.horoscapp.databinding.ActivityDetailsBinding
-import com.example.horoscapp.domain.model.HoroscopeModel
 import com.example.horoscapp.domain.model.HoroscopeModel.*
 import com.example.horoscapp.ui.details.DetailsState.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,20 +37,21 @@ class DetailsActivity : AppCompatActivity() {
     private fun initUI() {
         setSupportActionBar(binding.detailsToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        
+        supportActionBar?.title = ""
+
         val image = when(args.modelType){
-            AQUARIUS -> R.drawable.aquarius_details
-            ARIES -> R.drawable.aries_details
-            CANCER -> R.drawable.cancer_details
-            CAPRICORN -> R.drawable.capricorn_details
-            TAURUS -> R.drawable.taurus_details
-            GEMINI -> R.drawable.gemini_details
-            LEO -> R.drawable.leo_details
-            VIRGO -> R.drawable.virgo_details
-            LIBRA -> R.drawable.libra_details
-            SCORPIO -> R.drawable.scorpio_details
-            SAGITTARIUS -> R.drawable.sagittarius_details
-            PISCES -> R.drawable.pisces_details
+            AQUARIUS -> aquarius_details
+            ARIES -> aries_details
+            CANCER -> cancer_details
+            CAPRICORN -> capricorn_details
+            TAURUS -> taurus_details
+            GEMINI -> gemini_details
+            LEO -> leo_details
+            VIRGO -> virgo_details
+            LIBRA -> libra_details
+            SCORPIO -> scorpio_details
+            SAGITTARIUS -> sagittarius_details
+            PISCES -> pisces_details
         }
         binding.detailsAppBarLayout.setBackgroundResource(image)
         
@@ -72,22 +75,48 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun loadingState() {
-        binding.pbPrediction.visibility = View.VISIBLE
-        binding.tvPrediction.visibility = View.GONE
+        binding.pbPrediction.visibility = VISIBLE
+        binding.tvPredictionTitle.visibility = INVISIBLE
+        binding.tvPrediction.visibility = GONE
+        binding.tvDetailsTitle.visibility = GONE
     }
 
-    private fun successState(detailsState: Success) {
-        binding.pbPrediction.visibility = View.GONE
-        binding.tvPrediction.visibility = View.VISIBLE
+    private fun successState(model: Success) {
+        binding.tvPrediction.gravity = TOP
+        binding.tvPrediction.text = model.horoscope.prediction
+        binding.tvPrediction.setTextColor(getColor(R.color.prediction))
+        
+        val name = when(args.modelType){
+            AQUARIUS -> aquarius
+            ARIES -> aries
+            CANCER -> cancer
+            CAPRICORN -> capricorn
+            TAURUS -> taurus
+            GEMINI -> gemini
+            LEO -> leo
+            VIRGO -> virgo
+            LIBRA -> libra
+            SCORPIO -> scorpio
+            SAGITTARIUS -> sagittarius
+            PISCES -> pisces
+        }
+        binding.tvDetailsTitle.text = getString(name)
 
-        binding.tvPrediction.text = detailsState.predictionModel.prediction
+        binding.pbPrediction.visibility = GONE
+        binding.tvPredictionTitle.visibility = VISIBLE
+        binding.tvPrediction.visibility = VISIBLE
+        binding.tvDetailsTitle.visibility = VISIBLE
     }
 
     private fun errorState(detailsState: Error) {
-        binding.pbPrediction.visibility = View.GONE
-        binding.tvPrediction.visibility = View.VISIBLE
-
+        binding.tvPrediction.gravity = CENTER_HORIZONTAL
         binding.tvPrediction.text = getString(detailsState.errorID)
+        binding.tvPrediction.setTextColor(getColor(R.color.prediction_error))
+
+        binding.pbPrediction.visibility = GONE
+        binding.tvPredictionTitle.visibility = INVISIBLE
+        binding.tvPrediction.visibility = VISIBLE
+        binding.tvDetailsTitle.visibility = GONE
     }
 
 }

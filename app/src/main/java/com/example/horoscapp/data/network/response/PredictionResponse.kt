@@ -12,10 +12,9 @@ import com.google.gson.annotations.SerializedName
 //}
 
 data class PredictionResponse(
-    @SerializedName("date") val date:String,
     @SerializedName("horoscope") val prediction:String
 ) {
     fun toDomain():PredictionModel{
-        return PredictionModel(date, prediction)
+        return PredictionModel(prediction)
     }
 }

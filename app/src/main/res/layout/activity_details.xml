@@ -18,9 +18,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/detailsToolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:subtitle=""
-            app:title="" />
+            android:layout_height="?attr/actionBarSize" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,25 +36,33 @@
             tools:text="Capricornio" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPredictionTitle"
+            style="@style/PredictionTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prediction_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailsTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPrediction"
-            style="@style/HoroscopeDetailsStyle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            style="@style/PredictionStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDetailsTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvPredictionTitle"
+            tools:text="@string/prediction_example" />
 
         <ProgressBar
             android:id="@+id/pbPrediction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/accent"
-            android:secondaryProgressTint="@color/gold"
+            android:indeterminateTint="@color/prediction"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

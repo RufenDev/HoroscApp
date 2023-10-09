@@ -37,12 +37,26 @@
     <style name="DetailsTitleStyle" parent="HoroscopeTitleStyle">
         <item name="android:textSize">48sp</item>
         <item name="android:layout_marginTop">16dp</item>
-        <item name="android:textColor">@color/details_accent</item>
+        <item name="android:textColor">@color/details</item>
     </style>
 
-    <style name="HoroscopeDetailsStyle" parent="BottomTitleStyle">
-        <item name="android:textColor">@color/details_accent</item>
+    <style name="PredictionTitleStyle">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/details</item>
         <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <style name="PredictionStyle">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/prediction</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
     </style>
 
 </resources>

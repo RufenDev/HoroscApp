@@ -7,5 +7,5 @@ sealed class DetailsState {
 
     data class Error(val errorID:Int):DetailsState()
 
-    data class Success(val predictionModel: PredictionModel):DetailsState()
+    data class Success(val horoscope: PredictionModel):DetailsState()
 }
