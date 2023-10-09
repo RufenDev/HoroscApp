@@ -9,16 +9,40 @@
         <item name="android:windowLightNavigationBar">false</item>
     </style>
 
-    <style name="Theme.HoroscApp" parent="Base.Theme.HoroscApp" />
+    <style name="DetailsTheme" parent="Base.Theme.HoroscApp">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 
-    <style name="ToolbarTitleStyle">
+
+    <style name="AccentStyle">
         <item name="android:fontFamily">@font/redressed</item>
         <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="BottomTitleStyle" parent="AccentStyle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="AccentStyle">
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="BottomTitleStyle">
-        <item name="android:fontFamily">@font/redressed</item>
-        <item name="android:textSize">18sp</item>
+    <style name="HoroscopeTitleStyle" parent="AccentStyle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
     </style>
+
+    <style name="DetailsTitleStyle" parent="HoroscopeTitleStyle">
+        <item name="android:textSize">48sp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textColor">@color/details_accent</item>
+    </style>
+
+    <style name="HoroscopeDetailsStyle" parent="BottomTitleStyle">
+        <item name="android:textColor">@color/details_accent</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
 </resources>

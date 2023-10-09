@@ -4,6 +4,8 @@ plugins {
     //Dagger hilt y KAPT
     id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
+    //Safeargs
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -56,6 +58,10 @@ dependencies {
     //Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-compiler:2.48.1")
+
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

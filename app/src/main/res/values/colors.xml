@@ -8,6 +8,7 @@
     <color name="primaryDark">#0A0A0A</color>
     <color name="secondary">#F4FBFB</color>
     <color name="accent">#d6a4fe</color>
+    <color name="details_accent">#44c5e4</color>
 
     <color name="black_alpha">#98000000</color>
     <color name="horoscope_base_color">#323232</color>

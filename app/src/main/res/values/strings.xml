@@ -17,5 +17,6 @@
     <string name="capricorn">Capricornio</string>
     <string name="aquarius">Acuario</string>
     <string name="pisces">Piscis</string>
+    <string name="prediction_error">Ha ocurrido un error. Por favor, intentelo más tarde.</string>
 
 </resources>

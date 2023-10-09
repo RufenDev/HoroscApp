@@ -8,4 +8,8 @@
         <item name="android:navigationBarColor">@color/primaryDark</item>
         <item name="android:windowLightNavigationBar">false</item>
     </style>
+
+    <style name="DetailsTheme" parent="Base.Theme.HoroscApp">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>

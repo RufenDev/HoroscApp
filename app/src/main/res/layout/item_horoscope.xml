@@ -18,12 +18,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHoroscopeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:fontFamily="@font/redressed"
-        android:textColor="@color/accent"
-        android:textSize="28sp"
+        style="@style/HoroscopeTitleStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
