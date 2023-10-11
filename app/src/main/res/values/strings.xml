@@ -21,5 +21,7 @@
     <string name="prediction_error">Ha ocurrido un error. Por favor, vuelva a intentarlo.</string>
     <string name="prediction_example">8 de octubre de 2023 - La acción debe ser su principal prioridad, especialmente cuando se trata de amor y romance.Es posible que no esté demasiado preocupado por qué tipo de acción tome.Su única preocupación es que no esté sentado en ningún momento.Una vez que descubres lo que quieres, es poco probable que te detengas hasta que lo obtengas.Tu poder es contundente y extremo.</string>
     <string name="prediction_title">Predicción</string>
+    <string name="luck_share">Compartir</string>
+    <string name="luck_prediction_example">\"Tu futuro está lleno de abundancia y prosperidad. Te espera una gran oportunidad para lograr todo lo que deseas. Mantén tu mente enfocada y determinada en tus metas, y verás cómo se abren nuevas puertas para ti. Confía en tu intuición y sigue adelante con valentía. ¡La buena suerte está de tu lado!\"</string>
 
 </resources>

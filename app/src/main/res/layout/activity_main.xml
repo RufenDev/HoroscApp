@@ -15,8 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_build_name"
         app:titleTextAppearance="@style/ToolbarTitleStyle"
-        app:title="@string/app_name"
         app:titleTextColor="@color/accent" />
 
     <androidx.fragment.app.FragmentContainerView

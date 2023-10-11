@@ -41,7 +41,7 @@ android {
 
             resValue("string", "app_build_name", "[DEBUG] HoroscApp")
 
-            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
@@ -77,8 +77,6 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-
-
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

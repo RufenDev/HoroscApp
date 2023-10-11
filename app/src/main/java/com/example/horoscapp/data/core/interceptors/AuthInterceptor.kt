@@ -11,7 +11,7 @@ class AuthInterceptor @Inject constructor(private val tokenManager: TokenManager
         val request = chain
             .request()
             .newBuilder()
-            .header("autorization", tokenManager.getToken())
+            .header("example-interceptor", tokenManager.getToken())
             .build()
 
         return chain.proceed(request)

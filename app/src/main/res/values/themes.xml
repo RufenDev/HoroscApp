@@ -14,20 +14,21 @@
     </style>
 
 
-    <style name="AccentStyle">
+    <!-- MAIN STYLES -->
+    <style name="PrimaryStyle">
         <item name="android:fontFamily">@font/redressed</item>
         <item name="android:textColor">@color/accent</item>
     </style>
 
-    <style name="BottomTitleStyle" parent="AccentStyle">
+    <style name="BottomTitleStyle" parent="PrimaryStyle">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="ToolbarTitleStyle" parent="AccentStyle">
+    <style name="ToolbarTitleStyle" parent="PrimaryStyle">
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="HoroscopeTitleStyle" parent="AccentStyle">
+    <style name="HoroscopeTitleStyle" parent="PrimaryStyle">
         <item name="android:textSize">28sp</item>
         <item name="android:layout_marginHorizontal">16dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -40,23 +41,40 @@
         <item name="android:textColor">@color/details</item>
     </style>
 
-    <style name="PredictionTitleStyle">
+    <!-- PREDICTION STYLE -->
+
+    <style name="SecondaryStyle">
         <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textColor">@color/prediction</item>
+    </style>
+
+    <style name="PredictionTitleStyle" parent="SecondaryStyle">
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/details</item>
         <item name="android:layout_margin">16dp</item>
     </style>
 
-    <style name="PredictionStyle">
-        <item name="android:fontFamily">@font/playfair_display</item>
+    <style name="PredictionStyle" parent="SecondaryStyle">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/prediction</item>
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:layout_marginHorizontal">16dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
+    </style>
+
+    <!-- LUCK STYLE -->
+
+    <style name="LuckPredictionStyle" parent="PredictionStyle">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="LuckShareStyle" parent="LuckPredictionStyle">
+        <item name="android:textColor">@color/details</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">32dp</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>
