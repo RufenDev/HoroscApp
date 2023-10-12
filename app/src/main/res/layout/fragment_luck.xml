@@ -7,6 +7,30 @@
     tools:background="@color/primary"
     tools:context=".ui.luck.LuckFragment">
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/luckTitleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLuckTitle"
+            style="@style/TestLuckTitleStyle"
+            android:text="@string/test_luck_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLuckSubitle"
+            style="@style/TestLuckSubtitleStyle"
+            android:text="@string/test_luck_subtitle" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivLuckPredictionCard"
         style="@style/LuckyCardStyle"
@@ -15,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivLuckyCard"
@@ -25,9 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:scaleX="3.5"
-        tools:scaleY="3.5"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivLuckyRoulette"
@@ -35,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-225dp"
         android:adjustViewBounds="true"
+        android:clickable="true"
         android:padding="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/roulette"
@@ -42,16 +65,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvLuckPrediction"
         style="@style/LuckPredictionStyle"
+        android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toTopOf="@id/cardLuckShare"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/luck_22"
-        tools:visibility="visible" />
+        tools:text="@string/luck_22"
+        tools:visibility="gone" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardLuckShare"
@@ -64,12 +88,12 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLuckShare"
             style="@style/LuckShareStyle"
-            android:text="@string/luck_try_again" />
+            android:text="@string/luck_share" />
 
     </androidx.cardview.widget.CardView>
 
@@ -84,7 +108,7 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLuckTryAgain"

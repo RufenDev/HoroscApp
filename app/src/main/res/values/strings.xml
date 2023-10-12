@@ -51,5 +51,7 @@
     <string name="luck_23">Se avecina un momento de estabilidad económica y éxito material.</string>
     <string name="luck_24">Tendrás la capacidad de liderar con compasión y comprensión en una situación emocionalmente compleja.</string>
     <string name="luck_25">Una sombra oscura sobrevuela tu cabeza, no estarás destinado a tener buena suerte en los próximos días.</string>
+    <string name="test_luck_title">Prueba tu suerte</string>
+    <string name="test_luck_subtitle">Presiona para girar</string>
 
 </resources>

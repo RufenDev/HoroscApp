@@ -65,6 +65,20 @@
 
     <!-- LUCK STYLE -->
 
+    <style name="TestLuckTitleStyle" parent="HoroscopeTitleStyle">
+        <item name="android:textSize">48sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">16sp</item>
+    </style>
+
+    <style name="TestLuckSubtitleStyle" parent="LuckPredictionStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:visibility">visible</item>
+
+    </style>
+
     <style name="LuckPredictionStyle" parent="PredictionStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginHorizontal">16dp</item>

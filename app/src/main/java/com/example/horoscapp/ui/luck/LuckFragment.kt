@@ -3,6 +3,8 @@ package com.example.horoscapp.ui.luck
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,14 +23,17 @@ import androidx.fragment.app.Fragment
 import com.example.horoscapp.R
 import com.example.horoscapp.R.anim.fade_in
 import com.example.horoscapp.R.anim.fade_out
+import com.example.horoscapp.R.anim.hide_roulette
 import com.example.horoscapp.R.anim.move_card_down
 import com.example.horoscapp.R.anim.move_card_up
 import com.example.horoscapp.R.anim.show_roulette
-import com.example.horoscapp.R.anim.hide_roulette
 import com.example.horoscapp.R.animator.flip_card_back
 import com.example.horoscapp.R.animator.flip_card_front
 import com.example.horoscapp.databinding.FragmentLuckBinding
+import com.example.horoscapp.ui.luck.model.LuckyModel
+import com.example.horoscapp.ui.luck.provider.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlin.random.Random
 
 @AndroidEntryPoint
@@ -38,30 +43,34 @@ class LuckFragment : Fragment() {
     private val binding get() = _binding!!
     private var itsAnimated = false
     private var isPredictionShowing = false
+    private var luckyModel: LuckyModel? = null
+
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentLuckBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initUI()
     }
 
     private fun initUI() {
-
+        preparePrediction()
         initListeners()
-
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun initListeners() {
+        binding.btnLuckShare.setOnClickListener { sharePrediction() }
+
         binding.ivLuckyRoulette.setOnClickListener { spinRoulette() }
 
         binding.btnLuckTryAgain.setOnClickListener {
@@ -92,15 +101,20 @@ class LuckFragment : Fragment() {
     private fun spinRoulette() {
         if (!itsAnimated) {
             itsAnimated = true
+
             val degrees = (Random.nextInt(360 * 2) + 90).toFloat()
             val animator = ObjectAnimator.ofFloat(binding.ivLuckyRoulette, ROTATION, 0f, degrees)
+
             animator.apply {
                 duration = 1200
                 interpolator = DecelerateInterpolator()
             }
-            animator.doOnEnd {
-                moveCard(true)
+            animator.doOnStart {
+                preparePrediction()
+                binding.luckTitleLayout.fade(false)
             }
+            animator.doOnEnd { moveCard(true) }
+
             animator.start()
         }
     }
@@ -114,6 +128,8 @@ class LuckFragment : Fragment() {
             override fun onAnimationStart(animation: Animation?) {
                 if (up) {
                     binding.ivLuckyCard.visibility = VISIBLE
+                } else {
+                    binding.luckTitleLayout.fade(true)
                 }
             }
 
@@ -182,7 +198,7 @@ class LuckFragment : Fragment() {
         val front = AnimatorInflater.loadAnimator(context, flip_card_front) as AnimatorSet
         val back = AnimatorInflater.loadAnimator(context, flip_card_back) as AnimatorSet
 
-        if(show){
+        if (show) {
             front.setTarget(binding.ivLuckyCard)
             back.setTarget(binding.ivLuckPredictionCard)
 
@@ -192,7 +208,7 @@ class LuckFragment : Fragment() {
         }
 
         front.doOnStart {
-            if(show){
+            if (show) {
                 binding.ivLuckPredictionCard.visibility = VISIBLE
 
             } else {
@@ -206,7 +222,7 @@ class LuckFragment : Fragment() {
         }
 
         front.doOnEnd {
-            if(show){
+            if (show) {
                 binding.ivLuckyCard.visibility = INVISIBLE
                 itsAnimated = false
                 isPredictionShowing = true
@@ -220,16 +236,43 @@ class LuckFragment : Fragment() {
         front.start()
     }
 
-    private fun View.fade(show:Boolean){
-        val fade = AnimationUtils.loadAnimation(context, if(show) fade_in else fade_out)
-        fade.setAnimationListener(object : AnimationListener{
+    private fun sharePrediction() {
+        if (isPredictionShowing && !itsAnimated) {
+            luckyModel?.let {
+                val prediction = "\"${getString(it.text)}\""
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, prediction)
+                    type = "text/plain"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun preparePrediction() {
+        luckyModel = randomCardProvider.getLucky()
+        luckyModel?.let {
+            binding.tvLuckPrediction.text = "\"${getString(it.text)}\""
+            binding.ivLuckPredictionCard.setImageResource(it.image)
+        }
+    }
+
+    private fun View.fade(show: Boolean) {
+        val fade: Animation = AnimationUtils.loadAnimation(context, if (show) fade_in else fade_out)
+        fade.setAnimationListener(object : AnimationListener {
             override fun onAnimationRepeat(animation: Animation?) {}
 
             override fun onAnimationStart(animation: Animation?) {
-                if(show) this@fade.visibility = VISIBLE
+                if (show) this@fade.visibility = VISIBLE
             }
+
             override fun onAnimationEnd(animation: Animation?) {
-                if(!show) this@fade.visibility = INVISIBLE
+                if (!show) this@fade.visibility = INVISIBLE
             }
         })
         this.startAnimation(fade)
