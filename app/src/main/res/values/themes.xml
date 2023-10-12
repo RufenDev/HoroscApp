@@ -66,15 +66,36 @@
     <!-- LUCK STYLE -->
 
     <style name="LuckPredictionStyle" parent="PredictionStyle">
-        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_marginBottom">48dp</item>
+        <item name="android:visibility">invisible</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="LuckShareStyle" parent="LuckPredictionStyle">
+    <style name="LuckShareStyle">
+        <item name="android:fontFamily">@font/playfair_display</item>
         <item name="android:textColor">@color/details</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_margin">32dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:paddingHorizontal">16dp</item>
+    </style>
+
+    <style name="LuckTryAgainStyle" parent="LuckShareStyle">
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="LuckyCardStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">-160dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:visibility">invisible</item>
     </style>
 
 </resources>

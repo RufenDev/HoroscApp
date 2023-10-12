@@ -22,6 +22,34 @@
     <string name="prediction_example">8 de octubre de 2023 - La acción debe ser su principal prioridad, especialmente cuando se trata de amor y romance.Es posible que no esté demasiado preocupado por qué tipo de acción tome.Su única preocupación es que no esté sentado en ningún momento.Una vez que descubres lo que quieres, es poco probable que te detengas hasta que lo obtengas.Tu poder es contundente y extremo.</string>
     <string name="prediction_title">Predicción</string>
     <string name="luck_share">Compartir</string>
-    <string name="luck_prediction_example">\"Tu futuro está lleno de abundancia y prosperidad. Te espera una gran oportunidad para lograr todo lo que deseas. Mantén tu mente enfocada y determinada en tus metas, y verás cómo se abren nuevas puertas para ti. Confía en tu intuición y sigue adelante con valentía. ¡La buena suerte está de tu lado!\"</string>
+    <string name="luck_prediction_example">Tu futuro está lleno de abundancia y prosperidad. Te espera una gran oportunidad para lograr todo lo que deseas. Mantén tu mente enfocada y determinada en tus metas, y verás cómo se abren nuevas puertas para ti. Confía en tu intuición y sigue adelante con valentía. ¡La buena suerte está de tu lado!</string>
+    <string name="luck_try_again">Volver a girar</string>
+
+    <string name="luck_0">Prepárate para un nuevo comienzo excitante e inesperado.</string>
+    <string name="luck_1">Estás en una posición de poder y habilidad para alcanzar tus objetivos.</string>
+    <string name="luck_2">Debes escuchar tu intuición y examinar las cosas más profundamente.</string>
+    <string name="luck_3">Imagina y crea, tu fertilidad creativa está en su apogeo.</string>
+    <string name="luck_4">Debes tomar decisiones firmes y equilibrar tu mente y tus emociones.</string>
+    <string name="luck_5">Tu camino espiritual y tu guía interna son importantes para ti ahora.</string>
+    <string name="luck_6">El amor verdadero está a la vuelta de la esquina y te espera.</string>
+    <string name="luck_7">Prepárate para una victoria significativa que requiere determinación y acción.</string>
+    <string name="luck_8">Se te otorga lo que mereces, tanto bueno como malo.</string>
+    <string name="luck_9">Necesitas tomarte un tiempo para ti mismo y meditar en soledad.</string>
+    <string name="luck_10">Abrace el cambio y prepárate para las fluctuaciones del destino.</string>
+    <string name="luck_11">Debes dominar tus emociones y ser más valiente de lo que crees que eres.</string>
+    <string name="luck_12">Suelta tus ataduras y cambia tu perspectiva para avanzar.</string>
+    <string name="luck_13">Estás experimentando el fin de un ciclo y un renacimiento.</string>
+    <string name="luck_14">Debes encontrar el equilibrio interno y la armonía entre los opuestos.</string>
+    <string name="luck_15">Estás atrapado en una situación negativa, trata de liberarte.</string>
+    <string name="luck_16">Debes esperar cambios repentinos e imprevistos que pueden ser dolorosos.</string>
+    <string name="luck_17">Estás en un camino de curación y restauración de la esperanza y felicidad.</string>
+    <string name="luck_18">Tu intuición debe guiarte, pero también debes ser consciente de tus miedos y sueños.</string>
+    <string name="luck_19">Prepárate para la felicidad, la abundancia y el éxito en todas las áreas de tu vida.</string>
+    <string name="luck_20">Es hora de que te reconcilies con tu pasado y te prepares para un futuro brillante.</string>
+    <string name="luck_21">Has alcanzado la realización completa de tu ser y la unificación de tus logros.</string>
+    <string name="luck_22">Pronto tendrás un momento de claridad emocional y podrás expresar tus emociones de manera fluida y sincera.</string>
+    <string name="luck_23">Se avecina un momento de estabilidad económica y éxito material.</string>
+    <string name="luck_24">Tendrás la capacidad de liderar con compasión y comprensión en una situación emocionalmente compleja.</string>
+    <string name="luck_25">Una sombra oscura sobrevuela tu cabeza, no estarás destinado a tener buena suerte en los próximos días.</string>
 
 </resources>
