@@ -1,7 +1,6 @@
 package com.example.horoscapp.ui.horoscope
 
 import com.example.horoscapp.data.provider.HoroscopeProvider
-import com.example.horoscapp.motherobject.HoroscopeMotherObject
 import com.example.horoscapp.motherobject.HoroscopeMotherObject.horoscopeInfoList
 import io.mockk.MockKAnnotations
 import io.mockk.every

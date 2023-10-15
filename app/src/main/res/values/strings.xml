@@ -24,6 +24,8 @@
     <string name="luck_share">Compartir</string>
     <string name="luck_prediction_example">Tu futuro está lleno de abundancia y prosperidad. Te espera una gran oportunidad para lograr todo lo que deseas. Mantén tu mente enfocada y determinada en tus metas, y verás cómo se abren nuevas puertas para ti. Confía en tu intuición y sigue adelante con valentía. ¡La buena suerte está de tu lado!</string>
     <string name="luck_try_again">Volver a girar</string>
+    <string name="test_luck_title">Prueba tu suerte</string>
+    <string name="test_luck_subtitle">Presiona para girar</string>
 
     <string name="luck_0">Prepárate para un nuevo comienzo excitante e inesperado.</string>
     <string name="luck_1">Estás en una posición de poder y habilidad para alcanzar tus objetivos.</string>
@@ -51,7 +53,5 @@
     <string name="luck_23">Se avecina un momento de estabilidad económica y éxito material.</string>
     <string name="luck_24">Tendrás la capacidad de liderar con compasión y comprensión en una situación emocionalmente compleja.</string>
     <string name="luck_25">Una sombra oscura sobrevuela tu cabeza, no estarás destinado a tener buena suerte en los próximos días.</string>
-    <string name="test_luck_title">Prueba tu suerte</string>
-    <string name="test_luck_subtitle">Presiona para girar</string>
 
 </resources>
